@@ -1,0 +1,17 @@
+def chiffrermessage(chaine,n):
+	chainechiffree = ""
+	
+	for c in chaine:
+		#print(c)
+		codeAscii = ord(c)
+		codeAscii = codeAscii + n
+		if codeAscii > 122:
+			codeAscii = codeAscii - 26
+		lettrechiffree = chr(codeAscii)
+		chainechiffree = chainechiffree + lettrechiffree
+	return chainechiffree
+chainee = input("Entrer la chaine a chiffrer")
+chaine = chainee.lower()
+n = int(input("Entrer le decalage n du ROTn"))
+chainechiffree = chiffrermessage(chaine,n)
+print(chainechiffree)
